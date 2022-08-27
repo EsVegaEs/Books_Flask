@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport">
+    <meta keywords="" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <title>A Cool Website</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h1>New Book</h1>
+            <form action="/addnewbook" method="post">
+                <label for="title">Book Title:</label>
+                <input type="text" name="title">
+                <label for="page_number">Number of Pages:</label>
+                <input type="number" name="page_number">
+                <input type="submit" value="Add Book">
+            </form>
+        </div>
+        <div class="container">
+            <h1>All Books</h1>
+            {%for book in books%}
+                <a href="/book/{{book.id}}">{{book.title}}</a>
+            {%endfor%}
+        </div>
+    </main>
+    <a href="/">Home</a>
+</body>
+</html>

@@ -1,0 +1,16 @@
+main{
+display:flex;
+flex-direction:row;
+}
+.container{
+    margin: 20px auto;
+    display:flex;
+    flex-direction: column;
+}
+.a1{
+    text-align:right;
+}
+form{
+    display:flex;
+    flex-direction:column;
+}
